@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="calculator">
+    <input type="text"
+           class="calculator-screen"
+           value={{displayValue}}
+           disabled />
+    <div class="calculator-keys">
+      <button class="operator"
+              (click)="handleOperator('+')">+</button>
+      <button class="operator"
+              (click)="handleOperator('-')">-</button>
+      <button class="operator"
+              (click)="handleOperator('*')">*</button>
+      <button class="operator"
+              (click)="handleOperator('/')">/</button>
+
+      <button *ngFor="let digit of ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']"
+              (click)="inputDigit(digit)">{{ digit }}</button>
+
+      <button class="decimal"
+              (click)="inputDecimal('.')">.</button>
+      <button class="all-clear"
+              (click)="resetCalculator()">AC</button>
+      <button class="operator equal-sign"
+              (click)="handleOperator('=')">=</button>
+      <button (click)="clearOneDigit()">C</button>
+
+
+    </div>
+  </div>
+</div>
